@@ -24,6 +24,21 @@ body {
   flex:2;
   border: blueviolet solid;
   margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addchore-container {
+  margin: 10px;
+}
+
+/* .chorespending-container {
+  margin: 5px;
+} */
+
+.choreitem-container {
+  margin: 10px;
 }
 
 .container-3 {

@@ -1,14 +1,10 @@
 import React from 'react';
+import ChoreItem from './ChoreItem.jsx';
 
-let ChoresPending = (props) => {
-  console.log(props);
+let ChoresPending = ({ choresPending }) => {
   return (
-    props.choresPending.map(chore => {
-      console.log('chore: ', chore.chore);
-      return <p>{chore.chore}</p>
-    })
-
-  )
+    choresPending.map((chore, index) => <ChoreItem chore={chore} key={index} />)
+  );
 
 };
 

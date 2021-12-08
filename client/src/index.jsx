@@ -37,8 +37,12 @@ class App extends React.Component {
         <div className='container-1'>
           <div className='container-2'>
             <h2>container 2</h2>
-            <AddChore />
-            <ChoresPending choresPending={this.state.choresPending} />
+            <div className='addchore-container'>
+              <AddChore />
+            </div>
+            <div className='chorespending-container'>
+              <ChoresPending choresPending={this.state.choresPending} />
+            </div>
           </div>
           <div className='container-3'>
             <h2>container 3</h2>
