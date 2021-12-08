@@ -1,3 +1,33 @@
-h1 {
-  color: blue;
+body {
+  width: 1000px;
+  margin: auto;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid;
+}
+
+.title {
+  border:blue solid;
+}
+
+.container-1 {
+  display: flex;
+  border: solid blue;
+  width: 900px;
+}
+
+.container-2 {
+  flex:2;
+  border: blueviolet solid;
+  margin: 5px;
+}
+
+.container-3 {
+  flex:1;
+  border: blueviolet solid;
+  margin: 5px;
 }
