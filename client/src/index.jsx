@@ -11,22 +11,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      choresPending: [
-        {
-          createdBy: 'Mom',
-          date: '2021',
-          chore: 'Wash dishes',
-          points: 5,
-          completedBy: null
-        },
-        {
-          createdBy: 'Mom',
-          date: '2021',
-          chore: 'Water the plants please',
-          points: 5,
-          completedBy: null
-        }
-      ],
+      choresPending: [],
       bank: [
         {
           name: 'Christina',
@@ -37,9 +22,25 @@ class App extends React.Component {
           totalPoints: 36
         }
       ]
-    }
+    };
+
+    this.getPendingChores = this.getPendingChores.bind(this);
   }
 
+  componentDidMount() {
+    this.getPendingChores();
+  }
+
+  getPendingChores() {
+    axios.get('/getPendingChores')
+      .then(result => {
+        console.log(result);
+        this.setState({ choresPending: result.data });
+      })
+      .catch(err => {
+        console.log('err in getPendingChores: ', err);
+      });
+  }
 
   render() {
     return (
@@ -49,7 +50,7 @@ class App extends React.Component {
           <div className='container-2'>
             <h2>container 2</h2>
             <div className='addchore-container'>
-              <AddChore />
+              <AddChore getPendingChores={this.getPendingChores} />
             </div>
             <div className='chorespending-container'>
               <ChoresPending choresPending={this.state.choresPending} />

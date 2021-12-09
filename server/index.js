@@ -23,6 +23,17 @@ app.post('/addChore', (req, res) => {
     })
 });
 
+app.get('/getPendingChores', (req, res) => {
+  Chore.find({ completedBy: '' }).exec()
+    .then(result => {
+      console.log('resulllt: ', result);
+      res.status(200).send(result);
+    })
+    .catch(err => {
+      res.status(400).send(err);
+    });
+});
+
 app.listen(port, () => {
   console.log(`ChoreBank listening at http://localhost:${port}`)
 });

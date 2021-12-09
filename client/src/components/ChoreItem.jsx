@@ -6,7 +6,7 @@ let ChoreItem = ({ chore }) => {
       <form>
         <label>created by: {chore.createdBy}</label>
         <br></br>
-        <label>date: {chore.date}</label>
+        <label>date: {chore.createdDate}</label>
         <br></br>
         <label>chore: {chore.chore}</label>
         <br></br>

@@ -6,6 +6,8 @@ class AddChore extends React.Component {
     super(props);
 
     this.state = {};
+
+    this.getValues = this.getValues.bind(this);
   }
 
   //add chore to the database
@@ -27,6 +29,7 @@ class AddChore extends React.Component {
       .then(response => {
         console.log(response);
         //invoke function that gets all null completed chores
+        this.props.getPendingChores();
       })
       .catch(err => {
         console.log(err);
