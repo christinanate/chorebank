@@ -10,8 +10,17 @@ app.use(bodyParser.json());
 
 app.post('/addChore', (req, res) => {
   console.log('req.body: ', req.body);
-  const { chore, points, createdBy, createdDate } = req.body;
-  res.end();
+  const { chore, points, createdBy, createdDate, completedBy, completedDate } = req.body;
+
+  Chore.create({ chore, points, createdBy, createdDate, completedBy, completedDate })
+    .then(result => {
+      console.log(result);
+      res.status(200).send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(400).send(err);
+    })
 });
 
 app.listen(port, () => {
