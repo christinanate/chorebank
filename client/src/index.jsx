@@ -86,15 +86,21 @@ class App extends React.Component {
         <h1 className='title'>Chore Bank</h1>
         <div className='container-1'>
           <div className='container-2'>
-            <button onClick={this.handleBackClick}>Main</button>
-            <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
-            <h2>container 2</h2>
-            <div className='addchore-container'>
-              <AddChore getPendingChores={this.getPendingChores} />
-            </div>
-            <div className='chorespending-container'>
-              <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
-            </div>
+            {this.state.completedChoresForAccount.length > 0 ?
+              <>
+                <button onClick={this.handleBackClick}>Main</button>
+                <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
+              </>
+              :
+              <>
+                <div className='addchore-container'>
+                  <AddChore getPendingChores={this.getPendingChores} />
+                </div>
+                <div className='chorespending-container'>
+                  <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
+                </div>
+              </>
+            }
           </div>
           <div className='container-3'>
             <h2>container 3</h2>
