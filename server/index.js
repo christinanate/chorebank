@@ -71,8 +71,8 @@ app.post('/completedBy', (req, res) => {
 });
 
 app.put('/updateCompletedByField', (req, res) => {
-  const { createdDate, completedBy } = req.body;
-  Chore.findOneAndUpdate({ createdDate }, { completedBy })
+  const { createdDate, completedBy, completedDate } = req.body;
+  Chore.findOneAndUpdate({ createdDate }, { completedBy, completedDate })
     .then(result => {
       res.status(200).send(result);
     })
