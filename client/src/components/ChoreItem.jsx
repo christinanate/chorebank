@@ -10,6 +10,8 @@ let ChoreItem = ({ chore }) => {
         <br></br>
         <label>chore: {chore.chore}</label>
         <br></br>
+        <label>${chore.points}</label>
+        <br></br>
         <label>completed by:
           <input type='text'></input>
         </label>

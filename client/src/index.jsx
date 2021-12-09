@@ -4,6 +4,7 @@ import '../../styles.css';
 import axios from 'axios';
 import AddChore from './components/AddChore.jsx';
 import ChoresPending from './components/ChoresPending.jsx';
+import Bank from './components/Bank.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,6 +25,16 @@ class App extends React.Component {
           chore: 'Water the plants please',
           points: 5,
           completedBy: null
+        }
+      ],
+      bank: [
+        {
+          name: 'Christina',
+          totalPoints: 20
+        },
+        {
+          name: 'Michelle',
+          totalPoints: 36
         }
       ]
     }
@@ -46,6 +57,9 @@ class App extends React.Component {
           </div>
           <div className='container-3'>
             <h2>container 3</h2>
+            <div className='bank-container'>
+              <Bank bank={this.state.bank} />
+            </div>
           </div>
         </div>
       </div>
