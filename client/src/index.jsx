@@ -12,20 +12,14 @@ class App extends React.Component {
 
     this.state = {
       choresPending: [],
-      bank: [
-        {
-          name: 'Christina',
-          totalPoints: 20
-        },
-        {
-          name: 'Michelle',
-          totalPoints: 36
-        }
-      ]
+      bank: [],
+      completedChoresForAccount: []
     };
 
     this.getPendingChores = this.getPendingChores.bind(this);
     this.getBankInfo = this.getBankInfo.bind(this);
+    this.handleAccountClick = this.handleAccountClick.bind(this);
+    this.getCompletedChores = this.getCompletedChores.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +44,17 @@ class App extends React.Component {
       });
   }
 
+  getCompletedChores(accountName) {
+    axios.get('/getCompletedChores', { params: { accountName } })
+      .then(result => {
+        console.log(result);
+        this.setState({ completedChoresForAccount: result.data });
+      })
+      .catch(err => {
+        console.log('err in getCompletedChores: ', err);
+      });
+  }
+
   getBankInfo() {
     axios.get('/getBankInfo')
       .then(result => {
@@ -59,6 +64,14 @@ class App extends React.Component {
       .catch(err => {
         console.log('err in getBankInfo: ', err);
       })
+  }
+
+  handleAccountClick(e) {
+    e.preventDefault();
+    console.log('clicked!');
+    //when clicked should open a modal
+    console.log(e.target.innerText);
+    this.getCompletedChores(e.target.innerText);
   }
 
   render() {
@@ -78,7 +91,7 @@ class App extends React.Component {
           <div className='container-3'>
             <h2>container 3</h2>
             <div className='bank-container'>
-              <Bank bank={this.state.bank} />
+              <Bank bank={this.state.bank} handleAccountClick={this.handleAccountClick} />
             </div>
           </div>
         </div>

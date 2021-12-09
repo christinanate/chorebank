@@ -34,6 +34,17 @@ app.get('/getPendingChores', (req, res) => {
     });
 });
 
+app.get('/getCompletedChores', (req, res) => {
+  Chore.find({ completedBy: req.query.accountName }).exec()
+    .then(result => {
+      // console.log('resulllt: ', result);
+      res.status(200).send(result);
+    })
+    .catch(err => {
+      res.status(400).send(err);
+    });
+});
+
 app.get('/getBankInfo', (req, res) => {
   Account.find().exec()
     .then(result => {
@@ -60,8 +71,8 @@ app.post('/completedBy', (req, res) => {
 });
 
 app.put('/updateCompletedByField', (req, res) => {
-  const { task, completedBy } = req.body;
-  Chore.findOneAndUpdate({ chore: task }, { completedBy })
+  const { createdDate, completedBy } = req.body;
+  Chore.findOneAndUpdate({ createdDate }, { completedBy })
     .then(result => {
       res.status(200).send(result);
     })

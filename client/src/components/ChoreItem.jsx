@@ -9,16 +9,15 @@ let ChoreItem = ({ chore, getPendingChores }) => {
     console.log(e.target[0].value);
     let completedBy = e.target[0].value;
     let points = chore.points;
-    let task = chore.chore;
+    let createdDate = chore.createdDate;
     // console.log(points);
 
     //create new account in database if account doesn't exist, add points.
     axios.post('/completedBy', { completedBy, points })
       .then(result => {
         console.log(result);
-        console.log('task: ', task);
         //update completed by field in Chore
-        axios.put('/updateCompletedByField', { task, completedBy })
+        axios.put('/updateCompletedByField', { createdDate, completedBy })
           .then(result => {
             console.log('updated completedby field in chores!');
             console.log(result);
