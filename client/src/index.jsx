@@ -25,10 +25,18 @@ class App extends React.Component {
     };
 
     this.getPendingChores = this.getPendingChores.bind(this);
+    this.getBankInfo = this.getBankInfo.bind(this);
   }
 
   componentDidMount() {
     this.getPendingChores();
+    this.getBankInfo();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.choresPending.length !== this.state.choresPending.length) {
+      this.getBankInfo();
+    };
   }
 
   getPendingChores() {
@@ -42,6 +50,17 @@ class App extends React.Component {
       });
   }
 
+  getBankInfo() {
+    axios.get('/getBankInfo')
+      .then(result => {
+        console.log(result);
+        this.setState({ bank: result.data });
+      })
+      .catch(err => {
+        console.log('err in getBankInfo: ', err);
+      })
+  }
+
   render() {
     return (
       <div>
@@ -53,7 +72,7 @@ class App extends React.Component {
               <AddChore getPendingChores={this.getPendingChores} />
             </div>
             <div className='chorespending-container'>
-              <ChoresPending choresPending={this.state.choresPending} />
+              <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
             </div>
           </div>
           <div className='container-3'>
