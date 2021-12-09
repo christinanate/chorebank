@@ -5,6 +5,7 @@ import axios from 'axios';
 import AddChore from './components/AddChore.jsx';
 import ChoresPending from './components/ChoresPending.jsx';
 import Bank from './components/Bank.jsx';
+import ChoresCompleted from './components/ChoresCompleted.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
     this.getBankInfo = this.getBankInfo.bind(this);
     this.handleAccountClick = this.handleAccountClick.bind(this);
     this.getCompletedChores = this.getCompletedChores.bind(this);
+    this.handleBackClick = this.handleBackClick.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +57,10 @@ class App extends React.Component {
       });
   }
 
+  handleBackClick() {
+    this.setState({ completedChoresForAccount: [] });
+  }
+
   getBankInfo() {
     axios.get('/getBankInfo')
       .then(result => {
@@ -80,6 +86,8 @@ class App extends React.Component {
         <h1 className='title'>Chore Bank</h1>
         <div className='container-1'>
           <div className='container-2'>
+            <button onClick={this.handleBackClick}>Main</button>
+            <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
             <h2>container 2</h2>
             <div className='addchore-container'>
               <AddChore getPendingChores={this.getPendingChores} />
