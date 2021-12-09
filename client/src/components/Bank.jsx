@@ -3,7 +3,7 @@ import BankItem from './BankItem.jsx';
 
 let Bank = ({ bank }) => {
   return (
-    bank.map((account, index) => <BankItem account={account} />)
+    bank.map((account, index) => <BankItem account={account} key={index} />)
   )
 };
 
