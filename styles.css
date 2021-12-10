@@ -7,8 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: rgb(252, 252, 252) solid;
-  background-color: #f9ffff;
+  /* border: rgb(252, 252, 252) solid; */
+  /* background-color: #f9ffff; */
 }
 
 .title {
@@ -16,6 +16,7 @@ body {
   font-family: 'Acme', sans-serif;
   color: #90bede;
   font-size: 50px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -32,7 +33,7 @@ h2 {
 .container-2 {
   flex:2;
   /* border: blueviolet solid; */
-  margin: 5px;
+  /* margin: 5px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,12 +62,14 @@ h2 {
 
 .container-3 {
   flex:1;
-  border: rgb(231, 247, 247) solid;
-  background-color: #e5e1ee;
-  margin: 5px;
+  /* border: rgb(231, 247, 247) solid; */
+  background-color: #90f3ff;
+  /* margin: 5px; */
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 70px;
 }
 
 .bank-container {
