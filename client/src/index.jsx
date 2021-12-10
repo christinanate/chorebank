@@ -88,7 +88,7 @@ class App extends React.Component {
           <div className='container-2'>
             {this.state.completedChoresForAccount.length > 0 ?
               <>
-                <button onClick={this.handleBackClick}>Main</button>
+                <button onClick={this.handleBackClick} className='add-submit-btn'>Main</button>
                 <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
               </>
               :
@@ -100,6 +100,7 @@ class App extends React.Component {
                   </div>
                 </div>
                 <div className='chorespending-container'>
+                  <h2>Pending Chores</h2>
                   <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
                 </div>
               </>

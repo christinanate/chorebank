@@ -48,7 +48,7 @@ let ChoreItem = ({ chore, getPendingChores }) => {
         <label>
           <input type='text' placeholder='Completed By'></input>
         </label>
-        <input type='submit' value='Complete'></input>
+        <input type='submit' value='Complete' className='complete-submit-btn'></input>
       </form>
 
     </div>

@@ -53,20 +53,21 @@ h2 {
 }
 
 .chorespending-container {
-  border: solid black;
+  /* border: solid black; */
   width: 100%;
 }
 
 .choreitem-container {
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   padding-right: 30px;
   padding-left: 30px;
-  width: 60%;
+  width: 70%;
   text-align: center;
-  border: solid blueviolet;
+  border: solid aquamarine;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .chore-item-header {
@@ -108,16 +109,30 @@ input[type=submit] {
   /* border: none; */
   /* color: white; */
   padding: 10px 25px;
-  text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-  width: 50%;
+  width: 40%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
 }
 
 .add-submit-btn {
+  background-color: #90bede;
+  border: solid #90bede 2px;
+  color: white;
+}
+
+.add-submit-btn:hover {
+  background-color: #dffdff;
+  color: #90bede;
+}
+
+.complete-submit-btn {
   background-color: #dffdff;
   border: solid #90bede 2px;
   color: #90bede;
+  text-align: center;
 }
 
 .submit-wrap {
