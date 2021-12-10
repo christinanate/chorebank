@@ -83,7 +83,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1 className='title'>Chore Bank</h1>
+        <div className='title-header'>
+          <h1 className='title'>Chore Bank</h1>
+          <img src='./money-rich-svgrepo-com.svg' className='logo'></img>
+        </div>
         <div className='container-1'>
           <div className='container-2'>
             {this.state.completedChoresForAccount.length > 0 ?
