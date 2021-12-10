@@ -70,20 +70,25 @@ h2 {
   font-family: 'Montserrat', sans-serif;
 }
 
+.choreitem-container:hover {
+  background-color: rgb(176, 240, 219);
+}
+
 .chore-item-header {
   display: flex;
 }
 
 .container-3 {
   flex:1;
-  /* border: rgb(231, 247, 247) solid; */
-  background-color: #90f3ff;
+  /* border: blueviolet solid; */
+  background-color: #dffdff;
   /* margin: 5px; */
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 70px;
+  border-radius: 15px;
 }
 
 .bank-container {
@@ -93,8 +98,20 @@ h2 {
 
 .bankitem-container {
   display: flex;
-  width: 150px;
+  width: 200px;
   justify-content: space-around;
+  /* border: blue solid; */
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(36, 110, 21);
+  border: rgb(36, 110, 21) 1px solid;
+}
+
+.bankitem-container:hover {
+  cursor: pointer;
+  background-color: aquamarine;
 }
 
 input[type=text] {
@@ -118,9 +135,9 @@ input[type=submit] {
 }
 
 .add-submit-btn {
-  background-color: #90bede;
+  background-color: #dffdff;
   border: solid #90bede 2px;
-  color: white;
+  color: #90bede;
 }
 
 .add-submit-btn:hover {
