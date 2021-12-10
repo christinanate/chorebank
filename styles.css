@@ -52,12 +52,25 @@ h2 {
   /* background-color: #90bede; */
 }
 
-/* .chorespending-container {
-  margin: 5px;
-} */
+.chorespending-container {
+  border: solid black;
+  width: 100%;
+}
 
 .choreitem-container {
-  margin: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  width: 60%;
+  text-align: center;
+  border: solid blueviolet;
+}
+
+.chore-item-header {
+  display: flex;
 }
 
 .container-3 {

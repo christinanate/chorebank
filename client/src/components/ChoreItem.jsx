@@ -37,11 +37,11 @@ let ChoreItem = ({ chore, getPendingChores }) => {
   return (
     <div className='choreitem-container'>
       <form onSubmit={handleSubmit}>
-        <label>created by: {chore.createdBy}</label>
-        <br></br>
-        <label>date: {chore.createdDate}</label>
-        <br></br>
-        <label>chore: {chore.chore}</label>
+        <div className='chore-item-header'>
+          <label>{chore.createdBy} asks...</label>
+          <br></br>
+        </div>
+        <label>{chore.chore}</label>
         <br></br>
         <label>${chore.points}</label>
         <br></br>
