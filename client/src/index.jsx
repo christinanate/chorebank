@@ -88,7 +88,7 @@ class App extends React.Component {
           <div className='container-2'>
             {this.state.completedChoresForAccount.length > 0 ?
               <>
-                <button onClick={this.handleBackClick} className='add-submit-btn'>Main</button>
+                <button onClick={this.handleBackClick} className='main-btn'>Main</button>
                 <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
               </>
               :
