@@ -39,17 +39,19 @@ class AddChore extends React.Component {
   render() {
     return (
       <form onSubmit={this.getValues}>
-        <label>Chore:
-          <input type='text'></input>
+        <label>
+          <input type='text' placeholder='Chore'></input>
         </label>
-        <label>$
-          <input type='text'></input>
+        <label>
+          <input type='text' placeholder='$'></input>
         </label>
         <br></br>
-        <label>Created By:
-          <input type='text'></input>
+        <label>
+          <input type='text' placeholder='Created By'></input>
         </label>
-        <input type='submit' value='Submit'></input>
+        <div className='submit-wrap'>
+          <input type='submit' value='Create' className='add-submit-btn'></input>
+        </div>
       </form>
     );
   }

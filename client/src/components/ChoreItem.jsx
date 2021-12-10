@@ -45,10 +45,10 @@ let ChoreItem = ({ chore, getPendingChores }) => {
         <br></br>
         <label>${chore.points}</label>
         <br></br>
-        <label>completed by:
-          <input type='text'></input>
+        <label>
+          <input type='text' placeholder='Completed By'></input>
         </label>
-        <input type='submit' value='Submit'></input>
+        <input type='submit' value='Complete'></input>
       </form>
 
     </div>

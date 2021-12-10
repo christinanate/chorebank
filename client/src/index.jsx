@@ -93,8 +93,11 @@ class App extends React.Component {
               </>
               :
               <>
-                <div className='addchore-container'>
-                  <AddChore getPendingChores={this.getPendingChores} />
+                <div className='wrap'>
+                  <div className='addchore-container'>
+                    <h2>Add A Chore</h2>
+                    <AddChore getPendingChores={this.getPendingChores} />
+                  </div>
                 </div>
                 <div className='chorespending-container'>
                   <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
@@ -103,7 +106,7 @@ class App extends React.Component {
             }
           </div>
           <div className='container-3'>
-            <h2>container 3</h2>
+            <h2>Bank</h2>
             <div className='bank-container'>
               <Bank bank={this.state.bank} handleAccountClick={this.handleAccountClick} />
             </div>
