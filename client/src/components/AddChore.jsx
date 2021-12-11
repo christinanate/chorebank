@@ -50,7 +50,7 @@ class AddChore extends React.Component {
           <input type='text' placeholder='Created By'></input>
         </label>
         <div className='submit-wrap'>
-          <input type='submit' value='Create' className='add-submit-btn'></input>
+          <input type='submit' value='Add' className='add-submit-btn'></input>
         </div>
       </form>
     );

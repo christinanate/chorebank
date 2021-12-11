@@ -98,12 +98,17 @@ class App extends React.Component {
               <>
                 <div className='wrap'>
                   <div className='addchore-container'>
-                    <h2>Add A Chore</h2>
+                    <h2>Add a Chore</h2>
                     <AddChore getPendingChores={this.getPendingChores} />
                   </div>
                 </div>
                 <div className='chorespending-container'>
-                  <h2>Pending Chores</h2>
+                  {this.state.choresPending.length > 0 &&
+                    <div className='title-header'>
+                      <h2>Let's Earn </h2>
+                      <img src='./money-svgrepo-com.svg' className='logo'></img>
+                    </div>
+                  }
                   <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
                 </div>
               </>
