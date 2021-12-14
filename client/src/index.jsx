@@ -83,27 +83,39 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1 className='title'>Chore Bank</h1>
+        <div className='title-header'>
+          <h1 className='title'>Chore Bank</h1>
+          <img src='./money-rich-svgrepo-com.svg' className='logo'></img>
+        </div>
         <div className='container-1'>
           <div className='container-2'>
             {this.state.completedChoresForAccount.length > 0 ?
               <>
-                <button onClick={this.handleBackClick}>Main</button>
+                <button onClick={this.handleBackClick} className='main-btn'>Main</button>
                 <ChoresCompleted completedChoresForAccount={this.state.completedChoresForAccount} />
               </>
               :
               <>
-                <div className='addchore-container'>
-                  <AddChore getPendingChores={this.getPendingChores} />
+                <div className='wrap'>
+                  <div className='addchore-container'>
+                    <h2>Add a Chore</h2>
+                    <AddChore getPendingChores={this.getPendingChores} />
+                  </div>
                 </div>
                 <div className='chorespending-container'>
+                  {this.state.choresPending.length > 0 &&
+                    <div className='title-header'>
+                      <h2>Let's Earn </h2>
+                      <img src='./money-svgrepo-com.svg' className='logo'></img>
+                    </div>
+                  }
                   <ChoresPending choresPending={this.state.choresPending} getPendingChores={this.getPendingChores} />
                 </div>
               </>
             }
           </div>
           <div className='container-3'>
-            <h2>container 3</h2>
+            <h2>Bank</h2>
             <div className='bank-container'>
               <Bank bank={this.state.bank} handleAccountClick={this.handleAccountClick} />
             </div>
